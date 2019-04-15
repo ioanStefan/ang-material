@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+  <mat-card>
+    <mat-card-title>ADVA / QDEV</mat-card-title>
+    <mat-card-content fxLayout="column">
+      <form [formGroup]="form">
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Username" formControlName="username">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password">
+          </mat-form-field>
+        </p>
+        <p *ngIf="error" class="error">
+          {{error}}
+        </p>
+      </form>
+      <div class="button">
+        <button (click)="logIn()" mat-raised-button color="primary">Login</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
